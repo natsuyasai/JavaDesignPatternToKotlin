@@ -1,0 +1,36 @@
+@startuml
+title Iteratorパターンクラス図
+
+
+' 集合体
+interface Aggregate{
+    iterator()
+}
+
+' 具体的な集合体
+class ConcreteAggregate{
+    iterator()
+}
+
+' 反復子
+interface Iterator{
+    hasNext()
+    next()
+}
+
+' 具体的な反復子
+class ConcreteIterator{
+    aggregate: Aggregate
+    hasNext()
+    next()
+}
+
+' 配置指定
+Aggregate -[hidden]r- Iterator
+ConcreteAggregate -[hidden]r- ConcreteIterator 
+Aggregate --> Iterator : Creates
+ConcreteIterator o--> ConcreteAggregate
+Aggregate <|.. ConcreteAggregate
+Iterator <|.. ConcreteIterator
+
+@enduml

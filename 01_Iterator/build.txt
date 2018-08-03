@@ -1,0 +1,4 @@
+コンパイル
+kotlinc main.kt Book.kt BookShelf.kt Aggregate.kt Iterator.kt BookShelfIterator.kt -include-runtime -d 01_Iterator.jar
+実行
+kotlin 01_Iterator.jar
