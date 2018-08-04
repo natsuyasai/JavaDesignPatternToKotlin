@@ -1,0 +1,39 @@
+@startuml
+title Adapterパターン(委譲)クラス図
+
+' 依頼者
+class Client
+note left: Main
+
+' 対象
+class Target{
+    targetMethod1()
+    targetMethod2()
+}
+note left: Print
+
+' 適合役
+class Adapter{
+    adaptee : Adaptee
+    targetMethod1()
+    targetMethod2()
+}
+note bottom: PrintBanner
+
+' 適合される側
+class Adaptee{
+    methodA()
+    methodB()
+    methodC()
+}
+note bottom: Banner
+
+' 配置指定
+Target -[hidden]u- Client
+Target -[hidden]r- Adapter
+Adapter -[hidden]r- Adaptee
+Client --> Target : Uses
+Target <|-- Adapter : extends
+Adapter o--> Adaptee : has
+
+@enduml

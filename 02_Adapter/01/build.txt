@@ -1,0 +1,4 @@
+コンパイル
+kotlinc *.kt -include-runtime -d 02_Adapter_01.jar
+実行
+kotlin 02_Adapter_01.jar
