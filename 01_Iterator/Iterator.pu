@@ -6,17 +6,20 @@ title Iteratorパターンクラス図
 interface Aggregate{
     iterator()
 }
+note left: Aggregate
 
 ' 具体的な集合体
 class ConcreteAggregate{
     iterator()
 }
+note left: BookShelfIterator
 
 ' 反復子
 interface Iterator{
     hasNext()
     next()
 }
+note right: Iterator
 
 ' 具体的な反復子
 class ConcreteIterator{
@@ -24,6 +27,7 @@ class ConcreteIterator{
     hasNext()
     next()
 }
+note right: BookShelf
 
 ' 配置指定
 Aggregate -[hidden]r- Iterator
