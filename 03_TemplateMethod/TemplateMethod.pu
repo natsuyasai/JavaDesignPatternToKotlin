@@ -1,0 +1,30 @@
+@startuml
+title TemplateMethodパターンクラス図
+
+' 抽象クラス役
+class AbstractClass{
+    method1()
+    method2()
+    method3()
+    templateMethod()
+}
+
+' 具象クラス
+class Concrete1Class{
+    method1()
+    method2()
+    method3()
+}
+
+' 抽象クラス2
+class Concrete2Class{
+    method1()
+    method2()
+    method3()
+}
+
+' 配置指定
+AbstractClass <|-- Concrete1Class : extends
+AbstractClass <|-- Concrete2Class : extends
+
+@enduml

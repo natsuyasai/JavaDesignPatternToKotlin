@@ -1,0 +1,2 @@
+kotlinc *.kt -include-runtime -d 03_TemplateMethod.jar
+kotlin 03_TemplateMethod.jar
