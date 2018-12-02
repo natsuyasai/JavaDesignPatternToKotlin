@@ -2,12 +2,13 @@
 title TemplateMethodパターンクラス図
 
 ' 抽象クラス役
-class AbstractClass{
+abstract class AbstractClass{
     method1()
     method2()
     method3()
     templateMethod()
 }
+note left: AbstractDisplay
 
 ' 具象クラス
 class Concrete1Class{
@@ -15,6 +16,7 @@ class Concrete1Class{
     method2()
     method3()
 }
+note right: CharDisplay
 
 ' 抽象クラス2
 class Concrete2Class{
@@ -22,6 +24,7 @@ class Concrete2Class{
     method2()
     method3()
 }
+note right: StringDisplay
 
 ' 配置指定
 AbstractClass <|-- Concrete1Class : extends

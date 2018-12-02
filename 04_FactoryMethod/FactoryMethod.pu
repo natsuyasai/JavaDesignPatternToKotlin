@@ -1,0 +1,42 @@
+@startuml
+title FactoryMethodパターンクラス図
+
+' 作成者役
+abstract class Creator{
+    create()
+    factoryMethod()
+}
+note left: Factory
+
+' 製品役
+abstract class Product{
+    method1()
+    method2()
+    method3()
+}
+note right: Product
+
+' 具体的作成者
+class ConcreteCreator{
+    factoryMethod()
+}
+note left: IDCardFactory
+
+' 具体的製品
+class ConcreteProduct{
+    method1()
+    method2()
+    method3()
+}
+note right: IDCard
+
+'汎化
+Creator <|-d- ConcreteCreator
+Creator -r-> Product : Creates
+'汎化
+Product <|-d- ConcreteProduct
+ConcreteCreator -r-> ConcreteProduct : Creates
+
+
+
+@enduml
