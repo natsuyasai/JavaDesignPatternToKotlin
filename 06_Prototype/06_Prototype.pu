@@ -1,0 +1,18 @@
+@startuml
+title Prototypeパターンクラス図
+
+class Client{
+}
+
+abstract class Prototype{
+    createClone()
+}
+
+class ConcreatePrototype{
+    createClone()
+}
+
+Client -r-> Prototype: Uses
+Prototype <|-d- ConcreatePrototype
+
+@enduml
